@@ -238,7 +238,8 @@ useEffect(() => {
                 options.filter((option) =>
                   option.toLowerCase().includes(inputValue.toLowerCase())
                 )
-              }
+              }  getOptionLabel={(option) => option?.label || ''}
+
               renderInput={(params) => (
                 <TextField {...params} label="Category" color="primary" />
               )}
@@ -247,6 +248,8 @@ useEffect(() => {
           <Grid size={5}>
             <Autocomplete
               fullWidth
+                getOptionLabel={(option) => option?.label || ''}
+
               options={
                 Array.isArray(currentSubcategories) ? currentSubcategories : []
               }
@@ -266,6 +269,8 @@ useEffect(() => {
           <Grid size={5}>
             <Autocomplete
               options={Array.isArray(currentTypes) ? currentTypes : []}
+                getOptionLabel={(option) => option?.label || ''}
+
               value={productData.type}
               onChange={(_, newValue) => handleChange("type", newValue)}
               disabled={!productData.subcategory}

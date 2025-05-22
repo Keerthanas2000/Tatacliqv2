@@ -12,13 +12,13 @@ function Home() {
   // const [showLoginModal, setShowLoginModal] = useState(false);
 
   const cartCounter = useSelector((state) => {
-    console.log(state.cart);
     return state.cart.cartCounter;
   });
-  const wishlistCount = useSelector((state) => {
-    console.log(state.cart);
-    return state.cart.wishlistCount;
-  });
+ // Home.js
+const wishlistCount = useSelector((state) => {
+  console.log("Wishlist state:", state.wishlist); // Should log { items: [] }
+  return state.wishlist.items.length;
+});
   const placeholderTexts = [
     "Search for Products",
     "Search for Categories",

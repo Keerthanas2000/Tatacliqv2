@@ -27,7 +27,8 @@ export const addToWishlist = (prod) => ({
   payload: prod,
 });
 
-export const removeFromWishlist = (prod) => ({
+export const removeFromWishlist = (product) => ({
   type: "remove_from_wishlist",
-  payload: prod,
+  payload: product,
 });
+
